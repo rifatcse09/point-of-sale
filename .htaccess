@@ -1,0 +1,29 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^post_url/(.*)$ post_url/$1.php [L,QSA]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule employeeEdit/employee/(.*)$ employeeEdit.php?employee=$1 [L,QSA]
+RewriteRule supplierEdit/supp_id/(.*)$ supplierEdit.php?supp_id=$1 [L,QSA]
+RewriteRule customerEdit/customer/(.*)$ customerEdit.php?customer=$1 [L,QSA]
+RewriteRule itemEdit/item_id/(.*)$ itemEdit.php?item_id=$1 [L,QSA]
+RewriteRule categoryEdit/cat_id/(.*)$ categoryEdit.php?cat_id=$1 [L,QSA]
+RewriteRule suppaymentHistory/supplier/(.*)$ suppaymentHistory.php?supplier=$1 [L,QSA]
+RewriteRule invoiceDetails/invoice/(.*)$ invoiceDetails.php?invoice=$1 [L,QSA]
+RewriteRule itemUnitEdit/unit/(.*)$ itemUnitEdit.php?unit=$1 [L,QSA]
+RewriteRule invoice_print/invoice/(.*)$ invoice_print.php?invoice=$1 [L,QSA]
+RewriteRule purdetails/pur_id/(.*)$ purdetails.php?pur_id=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/.*]+)$ $1.php
+
+
+Options All -Indexes
+ErrorDocument 403  http://localhost
+ErrorDocument 404  http://localhost/404.html
+
+#ErrorDocument 403  http://localhost/pos/
+#ErrorDocument 404  http://localhost/pos/404.html

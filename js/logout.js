@@ -1,0 +1,12 @@
+$(function(){
+	$('#signout').click(function(){
+		$.ajax({
+			type:'post',
+			url:'post_url/signout',
+			success:function(){
+				window.location.href='http://localhost/ceramics/';
+				return;
+			}
+		});
+	});
+});
